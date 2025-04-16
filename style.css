@@ -11,11 +11,15 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
-    scroll-margin-top: 80px; /* Added for anchor scroll placement */
+    scroll-margin-top: 80px;
 }
 
 h1, h2 {
     color: #1a2a44;
+}
+
+.hero h1, .hero h2 {
+    color: #ffffff; /* Changed to white for better visibility */
 }
 
 h1 {
@@ -57,8 +61,8 @@ ul li {
 }
 
 .headshot {
-    width: 150px;
-    height: 150px;
+    width: 200px; /* Increased size for better headshot visibility */
+    height: 200px;
     border-radius: 50%;
     margin-bottom: 20px;
     object-fit: cover;
@@ -73,7 +77,7 @@ ul li {
     border-radius: 5px;
     font-weight: 600;
     transition: background-color 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added for modern feel */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
@@ -114,6 +118,16 @@ footer {
     font-size: 0.9rem;
 }
 
+footer a {
+    color: #a3bffa; /* Lighter color for better contrast */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff; /* White on hover for interactivity */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
@@ -129,7 +143,7 @@ footer {
     }
 
     .headshot {
-        width: 120px;
-        height: 120px;
+        width: 160px; /* Increased size for mobile */
+        height: 160px;
     }
 }
