@@ -64,10 +64,11 @@ ul li {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: top;
     margin: 0 auto 20px;
     display: block;
+    background-color: #1a2a44; /* Match the hero background to fill empty space */
 }
 
 .cta-button {
