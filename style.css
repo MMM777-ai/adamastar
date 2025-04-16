@@ -1,249 +1,133 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #1a2a44;
     line-height: 1.6;
-    color: #333;
+    background-color: #f5f7fa;
 }
 
-/* Container */
-.container {
+.section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #1a2a44;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1a2a44 0%, #3b5998 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 1.2em;
+.headshot {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     margin-bottom: 20px;
-    opacity: 0.9;
+    object-fit: cover;
 }
 
-/* Buttons */
-.btn {
+.cta-button {
     display: inline-block;
     padding: 12px 24px;
+    background-color: #3b5998;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 600;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
-.btn.primary {
-    background: #10b981;
-    color: white;
+.cta-button:hover {
+    background-color: #2a4373;
 }
 
-.btn.primary:hover {
-    background: #059669;
-}
-
-.btn.secondary {
-    background: #e5e7eb;
-    color: #1f2937;
-}
-
-.btn.secondary:hover {
-    background: #d1d5db;
-}
-
-/* About Section */
-.about {
-    padding: 40px 20px;
-    background: #f9fafb;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-.about p {
+.contact-form {
     max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Benefits Section */
-.benefits {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.benefits h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.benefits ul {
-    list-style: none;
-    max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: left;
 }
 
-.benefits li {
-    margin: 10px 0;
-    padding-left: 20px;
-    position: relative;
-}
-
-.benefits li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #10b981;
-}
-
-/* Visuals Section */
-.visuals {
-    padding: 40px 20px;
-    background: #f9fafb;
-    text-align: center;
-}
-
-.visuals h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.visuals h3 {
-    font-size: 1.4em;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: #1f2937;
-}
-
-.diagram {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
-    border: 1px solid #e5e7eb;
-    border-radius: 5px;
-}
-
-/* Strategic Fit Section */
-.strategic-fit {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.strategic-fit h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.strategic-fit ul {
-    list-style: none;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.strategic-fit li {
-    margin: 10px 0;
-    padding-left: 20px;
-    position: relative;
-}
-
-.strategic-fit li:before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #3b82f6;
-}
-
-.strategic-fit strong {
-    color: #1f2937;
-    font-weight: 600;
-}
-
-/* Call to Action Section */
-.cta {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.cta h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-.cta p {
-    max-width: 600px;
-    margin: 0 auto 20px;
-    color: #4b5563;
-}
-
-.cta small {
+.contact-form label {
     display: block;
-    margin-top: 15px;
-    color: #6b7280;
-    font-size: 0.9em;
+    margin: 10px 0 5px;
+    font-weight: 600;
 }
 
-.cta-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-/* Footer */
-.footer {
-    background: #1f2937;
+.contact-form textarea {
+    height: 150px;
+}
+
+footer {
+    background-color: #1a2a44;
     color: white;
-    padding: 20px;
     text-align: center;
-}
-
-.footer a {
-    color: #93c5fd;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+    padding: 20px;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2em;
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
     }
 
-    .subtitle {
-        font-size: 1em;
+    h2 {
+        font-size: 1.8rem;
     }
 
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+    .hero {
+        padding: 80px 20px;
     }
 
-    .about h2, .benefits h2, .visuals h2, .strategic-fit h2, .cta h2 {
-        font-size: 1.5em;
-    }
-
-    .visuals h3 {
-        font-size: 1.2em;
+    .headshot {
+        width: 120px;
+        height: 120px;
     }
 }
