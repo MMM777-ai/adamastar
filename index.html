@@ -8,7 +8,7 @@
     <!-- Open Graph Tags for Social Sharing -->
     <meta property="og:title" content="Mark Starobinsky – Technology Advisor">
     <meta property="og:description" content="Helping companies unlock AI-driven growth through strategy, governance, and transformation.">
-    <meta property="og:image" content="https://yourdomain.com/assets/headshot.jpg">
+    <meta property="og:image" content="assets/headshot.jpg">
     <meta property="og:url" content="https://yourdomain.com">
     <meta property="og:type" content="website">
     <!-- Plausible Analytics -->
@@ -25,7 +25,7 @@
             <h1>Mark Starobinsky</h1>
             <h2>Technology Advisor | Board Consultant | AI Executive</h2>
             <p>“Helping companies unlock AI-driven growth through strategy, governance, and transformation.”</p>
-            <a href="#contact" class="cta-button">Schedule a Consultation</a>
+            <a href="#contact" class="cta-button" aria-label="Schedule a consultation with Mark Starobinsky">Schedule a Consultation</a>
         </div>
     </header>
 
@@ -62,38 +62,59 @@
     <section id="resume" class="section">
         <h2>Executive Resume</h2>
         <p>Explore my professional journey and expertise in detail.</p>
-        <a href="assets/Mark_Starobinsky_Resume.pdf" class="cta-button" download>📄 View Executive Resume</a>
+        <a href="assets/Mark_Starobinsky_Resume.pdf" class="cta-button" download aria-label="Download Mark Starobinsky's executive resume">📄 View Executive Resume</a>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
         <h2>Contact</h2>
         <p>Ready to transform your organization with AI-driven strategies? Reach out to schedule a consultation.</p>
-        <p><strong>Email:</strong> <a href="mailto:mark.starobinsky@ontoguard.ai">mark.starobinsky@ontoguard.ai</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/markstarobinsky" target="_blank">Connect with me</a></p>
-        <form action="https://formspree.io/f/xnqkwzla" method="POST" class="contact-form">
+        <p><strong>Email:</strong> <a href="mailto:mark.starobinsky@ontoguard.ai" aria-label="Email Mark Starobinsky">mark.starobinsky@ontoguard.ai</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/markstarobinsky" target="_blank" aria-label="Connect with Mark Starobinsky on LinkedIn">Connect with me</a></p>
+        <form action="https://formspree.io/f/xnqkwzla" method="POST" class="contact-form" id="contact-form">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required aria-label="Your name">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required aria-label="Your email address">
             <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit" class="cta-button">Send Message</button>
+            <textarea id="message" name="message" required aria-label="Your message"></textarea>
+            <button type="submit" class="cta-button" aria-label="Submit contact form">Send Message</button>
         </form>
+        <p id="form-success" style="display: none; color: green; margin-top: 10px;">Thank you! Your message has been sent successfully.</p>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>Contact: <span id="email"></span> | <a href="https://www.linkedin.com/in/markstarobinsky/" target="_blank">LinkedIn</a></p>
-            <p>Featured in <a href="https://www.24-7pressrelease.com/press-release/521608/marquis-whos-who-honors-mark-starobinsky-for-expertise-in-data-and-artificial-intelligence" target="_blank">Marquis Who's Who 2025</a></p>
+            <p>Contact: <span id="email"></span> | <a href="https://www.linkedin.com/in/markstarobinsky/" target="_blank" aria-label="Connect with Mark Starobinsky on LinkedIn">LinkedIn</a></p>
+            <p>Featured in <a href="https://www.24-7pressrelease.com/press-release/521608/marquis-whos-who-honors-mark-starobinsky-for-expertise-in-data-and-artificial-intelligence" target="_blank" aria-label="Marquis Who's Who 2025 feature">Marquis Who's Who 2025</a></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <!-- Anti-spam email rendering -->
+    <!-- Anti-spam email rendering and form success handling -->
     <script>
-        document.getElementById("email").innerHTML = '<a href="mailto:mark.starobinsky@ontoguard.ai">mark.starobinsky@ontoguard.ai</a>';
+        document.getElementById("email").innerHTML = '<a href="mailto:mark.starobinsky@ontoguard.ai" aria-label="Email Mark Starobinsky">mark.starobinsky@ontoguard.ai</a>';
+        
+        // Form success message handling
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            fetch(this.action, {
+                method: "POST",
+                body: new FormData(this),
+                headers: { "Accept": "application/json" }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById("form-success").style.display = "block";
+                    this.reset();
+                    setTimeout(() => {
+                        document.getElementById("form-success").style.display = "none";
+                    }, 5000);
+                }
+            }).catch(error => {
+                console.error("Form submission error:", error);
+            });
+        });
     </script>
 </body>
 </html>
