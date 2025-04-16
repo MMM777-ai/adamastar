@@ -64,25 +64,19 @@ ul li {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Ensure the container clips the image to a circle */
+    overflow: hidden;
 }
 
-.headshot-container {
+.headshot-img {
     width: 100%;
     height: 100%;
-    border-radius: 50%; /* Make the container circular */
-    overflow: hidden; /* Clip the image to the circular shape */
-}
-
-.headshot-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fill the circular container, may crop slightly */
-    object-position: top; /* Prioritize the top of the image (head) */
+    object-fit: contain;
+    object-position: top;
+    border-radius: 50%; /* Ensure the image itself is circular */
 }
 
 .cta-button {
