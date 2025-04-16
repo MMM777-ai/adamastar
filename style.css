@@ -65,8 +65,10 @@ ul li {
     height: 200px;
     border-radius: 50%;
     margin-bottom: 20px;
-    object-fit: contain; /* Changed to contain to fit full headshot */
-    padding: 10px; /* Added padding for better appearance */
+    object-fit: contain;
+    object-position: top; /* Prioritize the top of the image */
+    max-width: 90%; /* Scale down the image to fit better */
+    max-height: 90%;
 }
 
 .cta-button {
@@ -146,6 +148,8 @@ footer a:hover {
     .headshot {
         width: 160px;
         height: 160px;
-        padding: 8px; /* Slightly reduced padding for mobile */
+        max-width: 90%;
+        max-height: 90%;
+        object-position: top;
     }
 }
